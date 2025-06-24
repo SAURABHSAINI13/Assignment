@@ -14,7 +14,7 @@ async function getWeather() {
         return
     }
     try {
-        let res = await fetch(`a6f84398a3f19c6c103d223707fffdcc`)
+        let res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
         let data = await res.json()
         if (data.cod !== 200) {
             errorMsg.textContent = 'City not found. Please try again.'
