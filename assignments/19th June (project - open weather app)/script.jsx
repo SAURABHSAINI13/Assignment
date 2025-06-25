@@ -23,14 +23,36 @@ async function getWeather() {
         }
         errorMsg.textContent = ''
         current.innerHTML = `
-            <h2>${data.name}</h2>
+        <h2>${data.name}</h2>
             <img class="weather-icon" src="https://i.pinimg.com/736x/77/0b/80/770b805d5c99c7931366c2e84e88f251.jpg" />
             <p><strong>Temperature:</strong> ${data.main.temp}°C</p>
             <p><strong>Condition:</strong> ${data.weather[0].main}</p>
             <p><strong>Humidity:</strong> ${data.main.humidity}%</p>
             <p><strong>Wind Speed:</strong> ${data.wind.speed} m/s</p>
-        `
-        console.log(data)
+            <h3>5-Day Forecast:</h3>
+            <div id="forecast" class="forecast"></div>
+            `
+            let forecastRes = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`)
+        let forecastData = await forecastRes.json()
+
+        let forecastDiv = document.getElementById('forecast')
+        forecastDiv.innerHTML = ''
+
+        let dailyData = forecastData.list.filter(item => item.dt_txt.includes('12:00:00'));
+
+        dailyData.forEach(day => {
+            let date = new Date(day.dt_txt).toDateString();
+            forecastDiv.innerHTML += `
+                <div class="forecast-day">
+                    <p><strong>${date}</strong></p>
+                    <p>🌡️ Temp: ${day.main.temp}°C</p>
+                    <p>☁️ ${day.weather[0].main}</p>
+                    <p>💧 Humidity: ${day.main.humidity}%</p>
+                </div>
+            `
+        })
+
+        console.log(forecastData)
     } catch (error) {
         console.log(error)
         errorMsg.textContent = 'Something went wrong. Try again later.'
