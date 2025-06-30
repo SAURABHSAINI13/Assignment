@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Game Cards Box</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<style>
+    body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #121212;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.outer-box {
+  background-color: #1f1f1f;
+  border-radius: 20px;
+  padding: 20px;
+  width: 90%;
+  max-width: 1100px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.title {
+  margin: 0 0 20px 0;
+  text-align: center;
+  color: #fff;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: #2a2a2a;
+  border-radius: 20px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.card h3 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.card p {
+  margin: 0;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #ffd700;
+}
+
+.info span:last-child {
+  color: #ff66b2;
+}
+
+</style>
+<body>
+  <div class="outer-box">
+    <h2 class="title">Top Games</h2>
+    <div class="card-container">
+      <!-- Repeat for each card -->
+      <div class="card">
+        <img src="https://via.placeholder.com/300x150" alt="Fortnite">
+        <h3>Fortnite</h3>
+        <p>Sandbox</p>
+        <div class="info">
+          <span><i class="fas fa-star"></i> 4.8</span>
+          <span><i class="fas fa-download"></i> 2.3M</span>
+        </div>
+
+
+  <section class="game-grid">
+    <div class="game-card">
+      <img src="https://i.imgur.com/Fz3k3UI.png" alt="Fortnite">
+      <h3>Fortnite</h3>
+      <p>Sandbox</p>
+      <div class="details">
+        <span>⭐ 4.8</span>
+        <span><i class="fas fa-download"></i> 2.3M</span>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <img src="https://i.imgur.com/KnMfzDQ.png" alt="PubG">
+      <h3>PubG</h3>
+      <p>Battle S</p>
+      <div class="details">
+        <span>⭐ 4.8</span>
+        <span><i class="fas fa-download"></i> 2.3M</span>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <img src="https://i.imgur.com/x9VnoMQ.png" alt="Dota2">
+      <h3>Dota2</h3>
+      <p>Steam-X</p>
+      <div class="details">
+        <span>⭐ 4.8</span>
+        <span><i class="fas fa-download"></i> 2.3M</span>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <img src="https://i.imgur.com/TMZ4Dbd.png" alt="CS-GO">
+      <h3>CS-GO</h3>
+      <p>Legendary</p>
+      <div class="details">
+        <span>⭐ 4.8</span>
+        <span><i class="fas fa-download"></i> 2.3M</span>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <img src="https://i.imgur.com/OXnbJbM.png" alt="Mini Craft">
+      <h3>Mini Craft</h3>
+      <p>Legendary</p>
+      <div class="details">
+        <span>⭐ 4.8</span>
+        <span><i class="fas fa-download"></i> 2.3M</span>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <img src="https://i.imgur.com/xAC3sm0.png" alt="Eagles Fly">
+      <h3>Eagles Fly</h3>
+      <p>Matrix Games</p>
+      <div class="details">
+        <span>⭐ 4.8</span>
+        <span><i class="fas fa-download"></i> 2.3M</span>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <img src="https://i.imgur.com/EUQYlF3.png" alt="Warface">
+      <h3>Warface</h3>
+      <p>Max 3D</p>
+      <div class="details">
+        <span>⭐ 4.8</span>
+        <span><i class="fas fa-download"></i> 2.3M</span>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <img src="https://i.imgur.com/ZqkhEVP.png" alt="Warcraft">
+      <h3>Warcraft</h3>
+      <p>Legend</p>
+      <div class="details">
+        <span>⭐ 4.8</span>
+        <span><i class="fas fa-download"></i> 2.3M</span>
+      </div>
+    </div>
+  </section>
+
+
+
+      </div>
+      <!-- Repeat similar blocks for other games -->
+      <!-- ... same as before for PubG, Dota2, etc ... -->
+    </div>
+  </div>
+</body>
+</html>

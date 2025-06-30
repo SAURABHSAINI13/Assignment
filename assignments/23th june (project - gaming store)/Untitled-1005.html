@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Live Streams – Cyborg Gaming</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #1f2122;
+      color: #fff;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    h2 em {
+      color: #e75e8d;
+      font-style: normal;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: flex-start;
+    }
+
+    .col {
+      flex: 1 1 300px;
+    }
+
+    .stream-card {
+      background-color: #2a2b2e;
+      border-radius: 20px;
+      padding: 20px;
+      transition: 0.3s;
+    }
+
+    .stream-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .image-wrapper {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .image-wrapper img {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
+    }
+
+    .watch-btn {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      background-color: #e75e8d;
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .watch-btn:hover {
+      background-color: #fff;
+      color: #e75e8d;
+    }
+
+    .stream-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-top: 15px;
+    }
+
+    .text-info h4 {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .game-title {
+      font-size: 14px;
+      color: #999;
+    }
+
+    .right-stats {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      font-size: 14px;
+      gap: 4px;
+      color: #ccc;
+    }
+
+    .right-stats i {
+      margin-right: 5px;
+    }
+
+    .stats {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .stats li i {
+      margin-right: 6px;
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2><em>Live</em> Streams</h2>
+
+    <div class="row">
+
+      <!-- Card 1 -->
+      <div class="col">
+        <div class="stream-card">
+          <div class="image-wrapper">
+            <img src="clip-01.jpg" alt="Fortnite" />
+            <a href="#watch" class="watch-btn">Watch</a>
+          </div>
+          <div class="stream-info">
+            <div class="text-info">
+              <h4>StreamerOne</h4>
+              <span class="game-title">Fortnite</span>
+            </div>
+            <div class="right-stats">
+              <span class="rating">⭐ 4.8</span>
+              <span class="downloads"><i class="fas fa-download"></i> 2.3M</span>
+            </div>
+          </div>
+          <ul class="stats">
+            <li><i class="fas fa-user"></i> 2.5K viewers</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col">
+        <div class="stream-card">
+          <div class="image-wrapper">
+            <img src="clip-02.jpg" alt="CS-GO" />
+            <a href="#watch" class="watch-btn">Watch</a>
+          </div>
+          <div class="stream-info">
+            <div class="text-info">
+              <h4>ProPlayer</h4>
+              <span class="game-title">CS-GO</span>
+            </div>
+            <div class="right-stats">
+              <span class="rating">⭐ 4.6</span>
+              <span class="downloads"><i class="fas fa-download"></i> 1.9M</span>
+            </div>
+          </div>
+          <ul class="stats">
+            <li><i class="fas fa-user"></i> 249K viewers</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col">
+        <div class="stream-card">
+          <div class="image-wrapper">
+            <img src="clip-03.jpg" alt="Gamezer" />
+            <a href="#watch" class="watch-btn">Watch</a>
+          </div>
+          <div class="stream-info">
+            <div class="text-info">
+              <h4>GameZer</h4>
+              <span class="game-title">Pool</span>
+            </div>
+            <div class="right-stats">
+              <span class="rating">⭐ 4.7</span>
+              <span class="downloads"><i class="fas fa-download"></i> 3.0M</span>
+            </div>
+          </div>
+          <ul class="stats">
+            <li><i class="fas fa-user"></i> 249K viewers</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>© Cyborg Gaming. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
