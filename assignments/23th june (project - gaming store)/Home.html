@@ -20,7 +20,7 @@ body {
   background-color: #1e1e1e;
   color: #fff;
 }
-/* Navbar */
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -133,6 +133,76 @@ height: 60vh;
   background-color: #d23e9b;
 }
 
+    .stream-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-top: 15px;
+    }
+
+    .text-info h4 {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .game-title {
+      font-size: 14px;
+      color: #999;
+    }
+
+    .right-stats-1 {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      font-size: 14px;
+      gap: 4px;
+      color: #ddcf07;
+    }
+
+.details {
+  color: #ff00d9;
+}
+
+
+
+    .right-stats i {
+      margin-right: 5px;
+    }
+
+    .stats {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .stats li i {
+      margin-right: 6px;
+    }
+
+.library-header {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* This will center it vertically too, if the header has a defined height */
+}
+
+
+.btn-Discover{
+  display: flex;
+  justify-content: center;
+  background-color: #ff4ecd;
+  border: 2px solid #ff4ecd;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  margin: 10px;
+  color: white;
+  align-items: center;
+}
+
+
+
 
 
 
@@ -193,12 +263,8 @@ height: 60vh;
   color: #bbb;
 }
 
-.details {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 8px;
-  color: #ffc107;
-}
+
+
 
 .library-section {
   max-width: 1100px;
@@ -265,7 +331,7 @@ height: 60vh;
   font-size: 14px;
 }
 
-.btn-gray {
+.btn-pink {
   background-color: transparent;
   border: 2px solid #ff4ecd;
   color: #ff4ecd;
@@ -275,7 +341,7 @@ height: 60vh;
   font-weight: 600;
 }
 
-.btn-pink {
+.btn-grey {
   background-color: transparent;
   border: 2px solid #888;
   color: #aaa;
@@ -283,17 +349,32 @@ height: 60vh;
   border-radius: 20px;
   font-weight: 600;
 }
+.library-header {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* This will center it vertically too, if the header has a defined height */
+}
 
-    /* Footer */
-    .footer {
-      background-color: rgb(35, 34, 34);
-      color: white;
-      text-align: center;
-      padding: 12px;
-      position: relative;
-      bottom: 0;
-      width: 100%;
-    }
+
+.btn-Library{
+  display: flex;
+  justify-content: center;
+  background-color: #ff4ecd;
+  border: 2px solid #ff4ecd;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  margin: 10px;
+  color: white;
+  align-items: center;
+}
+
+footer {
+  text-align: center;
+  margin: 60px 0 20px;
+  color: #777;
+  font-size: 14px;
+}
 
 </style>
 </head>
@@ -334,94 +415,140 @@ height: 60vh;
 </h2>
 
 
-  <section class="game-grid">
+<section class="game-grid">
     <div class="game-card">
       <img src="popular-01.jpg" alt="Fortnite">
-      <h3>Fortnite</h3>
-      <p>Sandbox</p>
-      <div class="details">
-        <span><i class="fas fa-star"></i> 4.8</span>
-        <span><i class="fas fa-download"></i> 2.3M</span>
-      </div>
+<div class="stream-info">
+            <div class="text-info">
+              <h4>Fortnite</h4>
+              <span class="game-title">Sandbox</span>
+            </div>
+            <div class="right-stats-1">
+              <span><i class="fas fa-star"></i> 4.8</span>
+              <span class="details"><i class="fas fa-download"></i> 2.3M</span>
+            </div>
+          </div>
     </div>
 
-    <div class="game-card">
-      <img src="popular-02.jpg" alt="PubG">
-      <h3>PubG</h3>
-      <p>Battle S</p>
-      <div class="details">
-        <span><i class="fas fa-star"></i> 4.8</span>
-        <span><i class="fas fa-download"></i> 2.3M</span>
-      </div>
+<div class="game-card">
+  <img src="popular-02.jpg" alt="PubG">
+  <div class="stream-info">
+    <div class="text-info">
+      <h4>PubG</h4>
+      <span class="game-title">Battle S</span>
     </div>
-
-    <div class="game-card">
-      <img src="popular-03.jpg" alt="Dota2">
-      <h3>Dota2</h3>
-      <p>Steam-X</p>
-      <div class="details">
-        <span><i class="fas fa-star"></i> 4.8</span>
-        <span><i class="fas fa-download"></i> 2.3M</span>
-      </div>
+    <div class="right-stats-1">
+      <span><i class="fas fa-star"></i> 4.8</span>
+      <span class="details"><i class="fas fa-download"></i> 2.3M</span>
     </div>
-
-    <div class="game-card">
-      <img src="popular-04.jpg" alt="CS-GO">
-      <h3>CS-GO</h3>
-      <p>Legendary</p>
-      <div class="details">
-        <span><i class="fas fa-star"></i> 4.8</span>
-        <span><i class="fas fa-download"></i> 2.3M</span>
-      </div>
-    </div>
-
-    <div class="game-card">
-      <img src="popular-05.jpg" alt="Mini Craft">
-      <h3>Mini Craft</h3>
-      <p>Legendary</p>
-      <div class="details">
-        <span><i class="fas fa-star"></i> 4.8</span>
-        <span><i class="fas fa-download"></i> 2.3M</span>
-      </div>
-    </div>
-
-    <div class="game-card">
-      <img src="popular-06.jpg" alt="Eagles Fly">
-      <h3>Eagles Fly</h3>
-      <p>Matrix Games</p>
-      <div class="details">
-        <span><i class="fas fa-star"></i> 4.8</span>
-        <span><i class="fas fa-download"></i> 2.3M</span>
-      </div>
-    </div>
-
-    <div class="game-card">
-      <img src="popular-07.jpg" alt="Warface">
-      <h3>Warface</h3>
-      <p>Max 3D</p>
-      <div class="details">
-        <span><i class="fas fa-star"></i> 4.8</span>
-        <span><i class="fas fa-download"></i> 2.3M</span>
-      </div>
-    </div>
-
-    <div class="game-card">
-      <img src="popular-08.jpg" alt="Warcraft">
-      <h3>Warcraft</h3>
-      <p>Legend</p>
-      <div class="details">
-        <span><i class="fas fa-star"></i> 4.8</span>
-        <span><i class="fas fa-download"></i> 2.3M</span>
-      </div>
-        <div class="library-header">
-    <button class="btn-danger">Discover Popular</button>
   </div>
-    </div>
-    </div>
-  </section>
-  <div class="outer-box-2">
-  
+</div>
 
+
+<div class="game-card">
+  <img src="popular-03.jpg" alt="Dota2">
+  <div class="stream-info">
+    <div class="text-info">
+      <h4>Dota2</h4>
+      <span class="game-title">Steam-X</span>
+    </div>
+    <div class="right-stats-1">
+      <span><i class="fas fa-star"></i> 4.8</span>
+      <span class="details"><i class="fas fa-download"></i> 2.3M</span>
+    </div>
+  </div>
+</div>
+
+<div class="game-card">
+  <img src="popular-04.jpg" alt="CS-GO">
+  <div class="stream-info">
+    <div class="text-info">
+      <h4>CS-GO</h4>
+      <span class="game-title">Legendary</span>
+    </div>
+    <div class="right-stats-1">
+      <span><i class="fas fa-star"></i> 4.8</span>
+      <span class="details"><i class="fas fa-download"></i> 2.3M</span>
+    </div>
+  </div>
+</div>
+
+<div class="game-card">
+  <img src="popular-05.jpg" alt="Mini Craft">
+  <div class="stream-info">
+    <div class="text-info">
+      <h4>Mini Craft</h4>
+      <span class="game-title">Legendary</span>
+    </div>
+    <div class="right-stats-1">
+      <span><i class="fas fa-star"></i> 4.8</span>
+      <span class="details"><i class="fas fa-download"></i> 2.3M</span>
+    </div>
+  </div>
+</div>
+
+<div class="game-card">
+  <img src="popular-06.jpg" alt="Eagles Fly">
+  <div class="stream-info">
+    <div class="text-info">
+      <h4>Eagles Fly</h4>
+      <span class="game-title">Matrix Games</span>
+    </div>
+    <div class="right-stats-1">
+      <span><i class="fas fa-star"></i> 4.8</span>
+      <span class="details"><i class="fas fa-download"></i> 2.3M</span>
+    </div>
+  </div>
+</div>
+
+<div class="game-card">
+  <img src="popular-07.jpg" alt="Warface">
+  <div class="stream-info">
+    <div class="text-info">
+      <h4>Warface</h4>
+      <span class="game-title">Max 3D</span>
+    </div>
+    <div class="right-stats-1">
+      <span><i class="fas fa-star"></i> 4.8</span>
+      <span class="details"><i class="fas fa-download"></i> 2.3M</span>
+    </div>
+  </div>
+</div>
+
+<div class="game-card">
+  <img src="popular-08.jpg" alt="Warcraft">
+  <div class="stream-info">
+    <div class="text-info">
+      <h4>Warcraft</h4>
+      <span class="game-title">Legend</span>
+    </div>
+    <div class="right-stats-1">
+      <span><i class="fas fa-star"></i> 4.8</span>
+      <span class="details"><i class="fas fa-download"></i> 2.3M</span>
+    </div>
+  </div>
+</div>
+      <div class="library-header">
+    <button class="btn-Discover">Discover Popular</button>
+  </div>
+  </div>
+  </section>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="outer-box-2">
   <div class="library-section">
     <h2><span class="highlight">Your Gaming</span> Library</h2>
 
@@ -433,9 +560,9 @@ height: 60vh;
           <p>Sandbox</p>
         </div>
       </div>
-      <div class="game-meta">24/08/2036</div>
+      <div class="game-meta"><h5>Date Added</h5><p>24/08/2036</p></div>
       <div class="game-meta"><h5>Hours Played</h5><p>634 H 22 Mins</p></div>
-      <div class="game-meta">Downloaded</div>
+      <div class="game-meta"><h5>Currently</h5><p>Downloaded</p></div>
       <div><button class="download-btn">Downloaded</button></div>
     </div>
 
@@ -447,10 +574,10 @@ height: 60vh;
           <p>Sandbox</p>
         </div>
       </div>
-      <div class="game-meta">22/06/2036</div>
+      <div class="game-meta"><h5>Date Added</h5><p>22/06/2036</p></div>
       <div class="game-meta"><h5>Hours Played</h5><p>745 H 22 Mins</p></div>
-      <div class="game-meta">Downloaded</div>
-      <div><button class="download-btn">Downloaded</button></div>
+      <div class="game-meta"><h5>Currently</h5><p>Downloaded</p></div>
+      <div><button class="btn-pink">Downloaded</button></div>
     </div>
 
     <div class="game-row">
@@ -461,38 +588,22 @@ height: 60vh;
           <p>Sandbox</p>
         </div>
       </div>
-      <div class="game-meta">21/04/2022</div>
+      <div class="game-meta"><h5>Date Added</h5><p>21/04/2022</p></div>
       <div class="game-meta"><h5>Hours Played</h5><p>632 H 46 Mins</p></div>
-      <div class="game-meta">Downloaded</div>
+      <div class="game-meta"><h5>Currently</h5><p>Downloaded</p></div>
       <div><button class="download-btn">Downloaded</button></div>
     </div>
+      <div class="library-header">
+    <button class="btn-Library">View Your Library</button>
   </div>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </section>
-
-
-
 </div>
 </div>
- <div class="footer">
-  <footer class="text-center text-muted py-4">
-    <p class="mb-0">Copyright © 2036 Cyborg Gaming Company. All rights reserved.</p>
+  <footer>
+    <p>Copyright © 2036 Cyborg Gaming Company. All rights reserved.</p>
     <p>Design: TemplateMo</p>
   </footer>
 

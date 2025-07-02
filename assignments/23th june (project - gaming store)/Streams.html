@@ -23,32 +23,57 @@ a {
   color: inherit;
 }
 
-/* Navigation Bar */
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #27292a;
+  background-color: #1e1e1e;
   padding: 20px 60px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
 }
-.navbar h1 {
-  color: #ec6090;
-  font-size: 28px;
-}
-.nav-links {
+
+.logo {
   display: flex;
-  gap: 25px;
+  align-items: center;
 }
+
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logo span {
+  font-size: 24px;
+  color: #e754b5;
+  font-weight: bold;
+}
+
+.search input {
+  background-color: #2d2d2d;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  width: 250px;
+  color: #ccc;
+}
+
 .nav-links a {
-  color: #fff;
-  transition: color 0.3s;
+  color: #ccc;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 16px;
 }
+
+.nav-links a.active,
 .nav-links a:hover {
-  color: #ec6090;
+  color: #e754b5;
 }
+
+.profile-icon img {
+  height: 32px;
+  border-radius: 50%;
+}
+
 
   * {
   margin: 0;
@@ -67,8 +92,8 @@ body {
   border-radius: 20px;
   padding: 70px;
   margin: 100px;
-  width: 190vh;
-  height: 150vh;
+  width: 180vh;
+  height: 400vh;
   max-width: 500vh;
   max-height: 500vh;
   align-items: center;
@@ -78,8 +103,8 @@ body {
 .outer-box-1 {
   background-color: #363636;
   border-radius: 20px;
-  padding: 70px;
-  margin: 100px;
+  padding: 20px;
+  margin: 10px;
   width: 170vh;
   height: 90vh;
   max-width: 500vh;
@@ -203,11 +228,16 @@ body {
   flex: 1;
   background-color: #121212;
   border-radius: 16px;
-  padding: 20px;
+  padding: 10px;
+  width: 100%; /* Ensure the container uses full available width */
+  box-sizing: border-box;
 }
 
 .top-downloaded ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
 }
 
 .top-downloaded li {
@@ -215,22 +245,34 @@ body {
   align-items: center;
   gap: 15px;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .top-downloaded img {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 40px;
   border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.top-downloaded .text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
 }
 
 .top-downloaded h4 {
   font-size: 16px;
   font-weight: 600;
+  margin: 0;
+  width: 100%;
 }
 
 .top-downloaded small {
   color: #aaa;
   font-size: 13px;
+  width: 100%;
 }
 
 .top-downloaded .meta {
@@ -238,7 +280,9 @@ body {
   color: #ccc;
   display: flex;
   gap: 10px;
+  width: 100%;
 }
+
 
 .download-btn {
   background-color: #2e2e2e;
@@ -371,9 +415,111 @@ footer {
     margin-top: 30px;
   }
 }
+
+
+.outer-box-2 {
+  background-color: #363636;
+  border-radius: 20px;
+  padding: 90px;
+  width: 185vh;
+  height: 140vh;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+        }
+
+.popular-section {
+  padding: 60px;
+  background-color: #1f2122;
+}
+
+.popular-section h2 {
+  font-size: 26px;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.popular-section .highlight {
+  color: #ec6090;
+}
+
+.stream-grid {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.stream-card {
+  background-color: #27292a;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.stream-card:hover {
+  transform: translateY(-10px);
+}
+
+.stream-card img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.stream-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+}
+
+.stream-info .avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.stream-info .name {
+  color: #fff;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.stream-info p {
+  margin: 0;
+  color: #aaa;
+  font-size: 14px;
+}
+
+footer {
+  text-align: center;
+  margin: 60px 0 20px;
+  color: #777;
+  font-size: 14px;
+}
+
   </style>
 </head>
 <body>
+  <header class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="Logo" />
+    </div>
+    <div class="search">
+      <input type="text" placeholder="Type Something" />
+    </div>
+    <nav class="nav-links">
+      <a href="Home.html" class="active">Home</a>
+      <a href="Browse.html">Browse</a>
+      <a href="Details.html">Details</a>
+      <a href="Streams.html">Streams</a>
+      <a href="Profile.jpg" class="profile-icon">
+        <img src="profile-header.jpg" alt="Profile" />
+      </a>
+    </nav>
+  </header>
+
   <div class="outer-box-0">
 <div class="outer-box-1">
   <div class="container">
@@ -452,7 +598,7 @@ footer {
 
     </div>
   </div>
-</div><!-- end .outer-box-0 -->
+<!-- end .outer-box-0 -->
 
 
 
@@ -498,10 +644,7 @@ footer {
       </ul>
       <a href="#" class="view-all">View All Games</a>
     </aside>
-  </div>
 </div>
-</div>
-
 
 
 
@@ -509,98 +652,112 @@ footer {
 
 
   
-  <div class="popular-section">
-    <h2><span class="highlight">Most Popular</span> Live Stream</h2>
-    <div class="stream-grid">
-      <!-- Card 1 -->
-      <div class="stream-card">
-        <img src="stream-05.jpg" alt="Stream 1">
-        <div class="stream-info">
-          <img class="avatar" src="avatar1.jpg" alt="Kengan Omeg">
-          <div>
-            <span class="name">Kengan Omeg</span>
-            <p>Just Talking With Fans</p>
-          </div>
-        </div>
-      </div>
-      <!-- Card 2 -->
-      <div class="stream-card">
-        <img src="stream-06.jpg" alt="Stream 2">
-        <div class="stream-info">
-          <img class="avatar" src="avatar2.jpg" alt="LahutaMalc">
-          <div>
-            <span class="name">LahutaMalc</span>
-            <p>CS-GO 36 Hours Live Stream</p>
-          </div>
-        </div>
-      </div>
-      <!-- Card 3 -->
-      <div class="stream-card">
-        <img src="stream-07.jpg" alt="Stream 3">
-        <div class="stream-info">
-          <img class="avatar" src="avatar3.jpg" alt="Areluwa">
-          <div>
-            <span class="name">Areluwa</span>
-            <p>Maybe Nathej Allnight Chillin'</p>
-          </div>
-        </div>
-      </div>
-      <!-- Card 4 -->
-      <div class="stream-card">
-        <img src="stream-08.jpg" alt="Stream 4">
-        <div class="stream-info">
-          <img class="avatar" src="avatar4.jpg" alt="NewGangTeam">
-          <div>
-            <span class="name">NewGangTeam</span>
-            <p>Live Streaming Till Morning</p>
-          </div>
-        </div>
-      </div>
-      <!-- Repeat the first four for demonstration -->
-      <div class="stream-card">
-        <img src="stream-07.jpg" alt="Stream 5">
-        <div class="stream-info">
-          <img class="avatar" src="avatar3.jpg" alt="Areluwa">
-          <div>
-            <span class="name">Areluwa</span>
-            <p>Maybe Nathej Allnight Chillin'</p>
-          </div>
-        </div>
-      </div>
-      <div class="stream-card">
-        <img src="stream-08.jpg" alt="Stream 6">
-        <div class="stream-info">
-          <img class="avatar" src="avatar4.jpg" alt="NewGangTeam">
-          <div>
-            <span class="name">NewGangTeam</span>
-            <p>Live Streaming Till Morning</p>
-          </div>
-        </div>
-      </div>
+ <div class="outer-box-2">
+  <h2><span class="highlight">Most Popular</span> Live Stream</h2>
+  <div class="stream-grid">
     <div class="stream-card">
-        <img src="stream-05.jpg" alt="Stream 1">
-        <div class="stream-info">
-          <img class="avatar" src="avatar1.jpg" alt="Kengan Omeg">
-          <div>
-            <span class="name">Kengan Omeg</span>
-            <p>Just Talking With Fans</p>
-          </div>
+      <img src="stream-05.jpg" alt="Stream 1">
+      <div class="stream-info">
+        <img class="avatar" src="avatar1.jpg" alt="Kengan Omeg">
+        <div>
+          <span class="name">Kengan Omeg</span>
+          <p>Just Talking With Fans</p>
         </div>
       </div>
-      <!-- Card 2 -->
-      <div class="stream-card">
-        <img src="stream-06.jpg" alt="Stream 2">
-        <div class="stream-info">
-          <img class="avatar" src="avatar2.jpg" alt="LahutaMalc">
-          <div>
-            <span class="name">LahutaMalc</span>
-            <p>CS-GO 36 Hours Live Stream</p>
-          </div>
+    </div>
+
+    <div class="stream-card">
+      <img src="stream-06.jpg" alt="Stream 2">
+      <div class="stream-info">
+        <img class="avatar" src="avatar2.jpg" alt="LahutaMalc">
+        <div>
+          <span class="name">LahutaMalc</span>
+          <p>CS-GO 36 Hours Live Stream</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stream-card">
+      <img src="stream-07.jpg" alt="Stream 3">
+      <div class="stream-info">
+        <img class="avatar" src="avatar3.jpg" alt="Areluwa">
+        <div>
+          <span class="name">Areluwa</span>
+          <p>Maybe Nathej Allnight Chillin'</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stream-card">
+      <img src="stream-08.jpg" alt="Stream 4">
+      <div class="stream-info">
+        <img class="avatar" src="avatar4.jpg" alt="NewGangTeam">
+        <div>
+          <span class="name">NewGangTeam</span>
+          <p>Live Streaming Till Morning</p>
         </div>
       </div>
     </div>
   </div>
+
+  <div class="stream-grid">
+    <div class="stream-card">
+      <img src="stream-05.jpg" alt="Stream 1">
+      <div class="stream-info">
+        <img class="avatar" src="avatar1.jpg" alt="Kengan Omeg">
+        <div>
+          <span class="name">Kengan Omeg</span>
+          <p>Just Talking With Fans</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stream-card">
+      <img src="stream-06.jpg" alt="Stream 2">
+      <div class="stream-info">
+        <img class="avatar" src="avatar2.jpg" alt="LahutaMalc">
+        <div>
+          <span class="name">LahutaMalc</span>
+          <p>CS-GO 36 Hours Live Stream</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stream-card">
+      <img src="stream-07.jpg" alt="Stream 3">
+      <div class="stream-info">
+        <img class="avatar" src="avatar3.jpg" alt="Areluwa">
+        <div>
+          <span class="name">Areluwa</span>
+          <p>Maybe Nathej Allnight Chillin'</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stream-card">
+      <img src="stream-08.jpg" alt="Stream 4">
+      <div class="stream-info">
+        <img class="avatar" src="avatar4.jpg" alt="NewGangTeam">
+        <div>
+          <span class="name">NewGangTeam</span>
+          <p>Live Streaming Till Morning</p>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+  <footer>
+    <p>Copyright © 2036 Cyborg Gaming Company. All rights reserved.</p>
+    <p>Design: TemplateMo</p>
+  </footer>
 
 </body>
 </html>

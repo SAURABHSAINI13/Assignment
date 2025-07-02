@@ -6,60 +6,36 @@
   <title>Profile</title>
   <style>
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-        background: #1b1b1b;
-  color: white;
-    }
-
-    
-
-
-    body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-
-    /* Navigation Bar */
-    .navbar {
-      background-color: #333;
-      overflow: hidden;
-    }
-
-    .navbar a {
-      float: left;
-      display: block;
-      color: white;
-      text-align: center;
-      padding: 14px 20px;
-      text-decoration: none;
-    }
-
-    .navbar a:hover {
-      background-color: #575757;
-    }
-
-
-    body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background: #1b1b1b;
   color: white;
 }
 
+
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #111;
-  padding: 15px 40px;
+  background-color: #1e1e1e;
+  padding: 20px 60px;
 }
 
 .logo {
-  font-weight: bold;
-  color: #ff5ea2;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logo span {
   font-size: 24px;
+  color: #e754b5;
+  font-weight: bold;
 }
 
 .search input {
@@ -71,32 +47,20 @@
   color: #ccc;
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-  align-items: center;
-  margin: 0;
-}
-
-.nav-links li {
+.nav-links a {
   color: #ccc;
-  cursor: pointer;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 16px;
 }
 
-.profile-btn {
-  background-color: #f45a8d;
-  padding: 8px 15px;
-  border-radius: 25px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: white;
+.nav-links a.active,
+.nav-links a:hover {
+  color: #e754b5;
 }
 
-.profile-btn img {
-  width: 30px;
-  height: 30px;
+.profile-icon img {
+  height: 32px;
   border-radius: 50%;
 }
 
@@ -159,8 +123,132 @@
   font-weight: bold;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  background-color: #1a1a1a;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Center container */
 .profile-stats {
-  background-color: #111;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 500px;
+}
+
+/* Each row */
+.profile-stats p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Ensures full-width lines */
+  max-width: 320px; /* Keeps it readable on wide screens */
+  padding: 16px 0;
+  border-bottom: px solid white; /* ✅ Solid continuous line */
+  color: white;
+  font-size: 18px;
+}
+
+/* Label on the left */
+.label {
+  text-align: left;
+}
+
+/* Value on the right */
+.value {
+  font-weight: bold;
+  color: #ff4ecd;
+  text-align: right;
+  min-width: 60px;
+}
+
+/* Style for 'None' */
+.value.none {
+  color: gray;
+  font-style: italic;
+}
+
+
+
+
+
+
+
+
+
+.library-header {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* This will center it vertically too, if the header has a defined height */
+}
+
+
+.btn-Library{
+  display: flex;
+  justify-content: center;
+  background-color: #ff4ecd;
+  border: 2px solid #ff4ecd;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  margin: 10px;
+  color: white;
+  align-items: center;
+}
+
+
+
+
+.Load-header {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* This will center it vertically too, if the header has a defined height */
+}
+
+
+.btn-Load{
+  display: flex;
+  justify-content: center;
+  background-color: #ff4ecd;
+  border: 2px solid #ff4ecd;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  margin: 10px;
+  color: white;
+  align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.profile-stats {
+  background-color: #2f2d2c;
   padding: 20px;
   border-radius: 15px;
   min-width: 200px;
@@ -181,6 +269,26 @@
 .profile-stats .none {
   color: #e55;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .clip-title {
   margin-top: 50px;
@@ -245,6 +353,8 @@ body {
   position: relative;
   border-radius: 10px;
   overflow: hidden;
+  display: flex; 
+  justify-content: space-between;
 }
 
 .thumbnail img {
@@ -269,6 +379,7 @@ body {
   align-items: center;
   justify-content: center;
   font-weight: bold;
+  
 }
 
 .clip-card h3 {
@@ -278,9 +389,21 @@ body {
 }
 
 .views {
+  display: flex; 
+  justify-content: space-between;
   font-size: 0.95rem;
-  color: #f06292;
+  color: #ffffff;
   margin-top: 5px;
+}
+
+.see {
+  display: flex; 
+  justify-content:left;
+  font-size: 0.95rem;
+  color: #ffffff;
+  margin-top: 5px;
+  gap: 10px; 
+color:  #f06292;
 }
 
 .load-more {
@@ -418,22 +541,23 @@ footer {
   </style>
 </head>
 <body>
-
-
-
-  <nav class="navbar">
-    <div class="logo">🎮 CYBORG</div>
+  <header class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="Logo" />
+    </div>
     <div class="search">
       <input type="text" placeholder="Type Something" />
     </div>
-    <ul class="nav-links">
-      <li>Home</li>
-      <li>Browse</li>
-      <li>Details</li>
-      <li>Streams</li>
-      <li class="profile-btn">Profile <img src="profile.jpg" alt="Profile"></li>
-    </ul>
-  </nav>
+    <nav class="nav-links">
+      <a href="Home.html" class="active">Home</a>
+      <a href="Browse.html">Browse</a>
+      <a href="Details.html">Details</a>
+      <a href="Streams.html">Streams</a>
+      <a href="Profile.jpg" class="profile-icon">
+        <img src="profile-header.jpg" alt="Profile" />
+      </a>
+    </nav>
+  </header>
 <div class="outer-box-0">
   <div class="profile-container">
     <div class="profile-card">
@@ -444,17 +568,16 @@ footer {
         <p>You Haven’t Gone Live yet. Go Live By Touching The Button Below.</p>
         <button class="live-btn">Start Live Stream</button>
       </div>
-      <div class="profile-stats">
-        <p>Games Downloaded <span>3</span></p>
-        <p>Friends Online <span>16</span></p>
-        <p>Live Streams <span class="none">None</span></p>
-        <p>Clips <span>29</span></p>
-      </div>
+<div class="profile-stats">
+  <p><span class="label">Games Downloaded</span><span class="value">3</span></p>
+  <p><span class="label">Friends Online</span><span class="value">16</span></p>
+  <p><span class="label">Live Streams</span><span class="value none">None</span></p>
+  <p><span class="label">Clips</span><span class="value">29</span></p>
+</div>
     <h3 class="clip-title"><span>Your Most Popular</span> Clips</h3>
     <!-- You can add a grid of clips here -->
 
   <section class="clips-section">
-    
     <div class="clips-container">
       <!-- Clip Card 1 -->
       <div class="clip-card">
@@ -462,8 +585,8 @@ footer {
           <img src="clip-01.jpg" alt="First Clip">
           <div class="play-btn">&#9658;</div>
         </div>
-        <h3>First Clip</h3>
-        <p class="views">&#128065; 250</p>
+        <h3 class="views">First Clip</h3>
+        <p class="see">&#128065; 250</p>
       </div>
 
       <!-- Clip Card 2 -->
@@ -472,8 +595,8 @@ footer {
           <img src="clip-02.jpg" alt="Second Clip">
           <div class="play-btn">&#9658;</div>
         </div>
-        <h3>Second Clip</h3>
-        <p class="views">&#128065; 183</p>
+        <h3 class="views">Second Clip</h3>
+        <p class="see">&#128065; 183</p>
       </div>
 
       <!-- Clip Card 3 -->
@@ -482,8 +605,8 @@ footer {
           <img src="clip-03.jpg" alt="Third Clip">
           <div class="play-btn">&#9658;</div>
         </div>
-        <h3>Third Clip</h3>
-        <p class="views">&#128065; 141</p>
+        <h3 class="views">Third Clip</h3>
+        <p class="see">&#128065; 141</p>
       </div>
 
       <!-- Clip Card 4 -->
@@ -492,14 +615,16 @@ footer {
           <img src="clip-04.jpg" alt="Fourth Clip">
           <div class="play-btn">&#9658;</div>
         </div>
-        <h3>Fourth Clip</h3>
-        <p class="views">&#128065; 91</p>
+        
+        <h3 class="views">Fourth Clip</h3>
+        <p class="see">&#128065; 91</p>
       </div>
     </div>
-
-    <button class="load-more">Load More Clips</button>
+<div class="Load-header">
+    <button class="btn-Load">Load More Clips</button>
   </section>
   </div>
+</div>
 </div>
 
 

@@ -24,7 +24,7 @@ async function getWeather() {
         errorMsg.textContent = ''
         current.innerHTML = `
         <h2>${data.name}</h2>
-            <img class="weather-icon" src="https://i.pinimg.com/736x/77/0b/80/770b805d5c99c7931366c2e84e88f251.jpg" />
+            <img class="weather-icon" src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" />
             <p><strong>Temperature:</strong> ${data.main.temp}°C</p>
             <p><strong>Condition:</strong> ${data.weather[0].main}</p>
             <p><strong>Humidity:</strong> ${data.main.humidity}%</p>

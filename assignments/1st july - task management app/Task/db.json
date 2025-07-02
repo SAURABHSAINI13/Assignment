@@ -1,0 +1,14 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Finish React Assignment",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "title": "Submit UI Design",
+      "completed": true
+    }
+  ]
+}

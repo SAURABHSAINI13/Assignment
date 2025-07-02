@@ -17,6 +17,32 @@
       background-color: #1f2122;
       color: #fff;
     }
+    .outer-box-0 {
+  background-color: #363636;
+  border-radius: 20px;
+  padding: 40px;
+  margin: 70px;
+  width: 200vh;
+  height: 800vh;
+  max-width: 900vh;
+  max-height: 1000vh;
+  align-items: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+    .outer-box-1 {
+  background-color: #363636;
+  border-radius: 20px;
+  padding: 40px;
+  margin: 70px;
+  width: 80vh;
+  height: 60vh;
+  max-width: 900vh;
+  max-height: 1000vh;
+  align-items: center;
+  background-color: #121212;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
 
     .container {
       max-width: 1200px;
@@ -129,11 +155,153 @@
       margin-right: 6px;
     }
 
+        .outer-box-2 {
+  background-color: #363636;
+  border-radius: 20px;
+  padding: 40px;
+  margin: 70px;
+  width: 200vh;
+  height: 180vh;
+  max-width: 900vh;
+  max-height: 1000vh;
+  align-items: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+        }
+
+    .top-downloaded {
+  flex: 1;
+  background-color: #121212;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.top-downloaded ul {
+  list-style: none;
+}
+
+.top-downloaded li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.top-downloaded img {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+.top-downloaded h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.top-downloaded small {
+  color: #aaa;
+  font-size: 13px;
+}
+
+.top-downloaded .meta {
+  font-size: 14px;
+  color: #ccc;
+  display: flex;
+  gap: 10px;
+}
+
+.download-btn {
+  background-color: #2e2e2e;
+  border: none;
+  border-radius: 50%;
+  color: #ec5f9e;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.view-all {
+  display: block;
+  margin-top: 10px;
+  color: #ec5f9e;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Popular Stream Section */
+.popular-section {
+  padding: 60px;
+  background-color: #1f2122;
+}
+
+.popular-section h2 {
+  font-size: 26px;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.popular-section .highlight {
+  color: #ec6090;
+}
+
+.stream-grid {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.stream-card {
+  background-color: #27292a;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.stream-card:hover {
+  transform: translateY(-10px);
+}
+
+.stream-card img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.stream-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+}
+
+.stream-info .avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.stream-info .name {
+  color: #fff;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.stream-info p {
+  margin: 0;
+  color: #aaa;
+  font-size: 14px;
+}
 
   </style>
 </head>
 <body>
-
+<div class="outer-box-0">
   <div class="container">
     <h2><em>Live</em> Streams</h2>
 
@@ -156,9 +324,6 @@
               <span class="downloads"><i class="fas fa-download"></i> 2.3M</span>
             </div>
           </div>
-          <ul class="stats">
-            <li><i class="fas fa-user"></i> 2.5K viewers</li>
-          </ul>
         </div>
       </div>
 
@@ -179,9 +344,6 @@
               <span class="downloads"><i class="fas fa-download"></i> 1.9M</span>
             </div>
           </div>
-          <ul class="stats">
-            <li><i class="fas fa-user"></i> 249K viewers</li>
-          </ul>
         </div>
       </div>
 
@@ -202,15 +364,160 @@
               <span class="downloads"><i class="fas fa-download"></i> 3.0M</span>
             </div>
           </div>
-          <ul class="stats">
-            <li><i class="fas fa-user"></i> 249K viewers</li>
-          </ul>
         </div>
       </div>
 
     </div>
   </div>
 
+
+
+    <div class="top-downloaded">
+      <div class="outer-box-1">
+      <h2><span>Top</span> Downloaded</h2>
+      <ul>
+        <li>
+          <img src="game-01.jpg" alt="Fortnite" />
+          <div>
+            <h4>Fortnite</h4>
+            <small>Sandbox</small>
+            <div class="meta">
+              <span>⭐ 4.9</span>
+              <span><i class="fas fa-download"></i> 2.2M</span>
+            </div>
+          </div>
+          <button class="download-btn"><i class="fas fa-download"></i></button>
+        </li>
+        <li>
+          <img src="game-02.jpg" alt="CS-GO" />
+          <div>
+            <h4>CS-GO</h4>
+            <small>Legendary</small>
+            <div class="meta">
+              <span>⭐ 4.9</span>
+              <span><i class="fas fa-download"></i> 2.2M</span>
+            </div>
+          </div>
+          <button class="download-btn"><i class="fas fa-download"></i></button>
+        </li>
+        <li>
+          <img src="game-03.jpg" alt="PugG" />
+          <div>
+            <h4>PugG</h4>
+            <small>Battle Royale</small>
+            <div class="meta">
+              <span>⭐ 4.9</span>
+              <span><i class="fas fa-download"></i> 2.2M</span>
+            </div>
+          </div>
+          <button class="download-btn"><i class="fas fa-download"></i></button>
+        </li>
+      </ul>
+      <a href="#" class="view-all">View All Games</a>
+    </div>
+    </div>
+</div>
+
+
+<div class="outer-box-2">
+  <h2><span class="highlight">Most Popular</span> Live Stream</h2>
+  <div class="stream-grid">
+    <div class="stream-card">
+      <img src="stream-05.jpg" alt="Stream 1">
+      <div class="stream-info">
+        <img class="avatar" src="avatar1.jpg" alt="Kengan Omeg">
+        <div>
+          <span class="name">Kengan Omeg</span>
+          <p>Just Talking With Fans</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stream-card">
+      <img src="stream-06.jpg" alt="Stream 2">
+      <div class="stream-info">
+        <img class="avatar" src="avatar2.jpg" alt="LahutaMalc">
+        <div>
+          <span class="name">LahutaMalc</span>
+          <p>CS-GO 36 Hours Live Stream</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stream-card">
+      <img src="stream-07.jpg" alt="Stream 3">
+      <div class="stream-info">
+        <img class="avatar" src="avatar3.jpg" alt="Areluwa">
+        <div>
+          <span class="name">Areluwa</span>
+          <p>Maybe Nathej Allnight Chillin'</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stream-card">
+      <img src="stream-08.jpg" alt="Stream 4">
+      <div class="stream-info">
+        <img class="avatar" src="avatar4.jpg" alt="NewGangTeam">
+        <div>
+          <span class="name">NewGangTeam</span>
+          <p>Live Streaming Till Morning</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stream-grid">
+    <div class="stream-card">
+      <img src="stream-05.jpg" alt="Stream 1">
+      <div class="stream-info">
+        <img class="avatar" src="avatar1.jpg" alt="Kengan Omeg">
+        <div>
+          <span class="name">Kengan Omeg</span>
+          <p>Just Talking With Fans</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stream-card">
+      <img src="stream-06.jpg" alt="Stream 2">
+      <div class="stream-info">
+        <img class="avatar" src="avatar2.jpg" alt="LahutaMalc">
+        <div>
+          <span class="name">LahutaMalc</span>
+          <p>CS-GO 36 Hours Live Stream</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stream-card">
+      <img src="stream-07.jpg" alt="Stream 3">
+      <div class="stream-info">
+        <img class="avatar" src="avatar3.jpg" alt="Areluwa">
+        <div>
+          <span class="name">Areluwa</span>
+          <p>Maybe Nathej Allnight Chillin'</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stream-card">
+      <img src="stream-08.jpg" alt="Stream 4">
+      <div class="stream-info">
+        <img class="avatar" src="avatar4.jpg" alt="NewGangTeam">
+        <div>
+          <span class="name">NewGangTeam</span>
+          <p>Live Streaming Till Morning</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
   <footer>
     <p>© Cyborg Gaming. All rights reserved.</p>
   </footer>
