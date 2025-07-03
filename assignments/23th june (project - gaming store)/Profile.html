@@ -135,7 +135,7 @@ body, html {
   font-family: 'Segoe UI', sans-serif;
 }
 
-/* Center container */
+
 .profile-stats {
   display: flex;
   flex-direction: column;
@@ -145,25 +145,25 @@ body, html {
   width: 500px;
 }
 
-/* Each row */
+
 .profile-stats p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%; /* Ensures full-width lines */
-  max-width: 320px; /* Keeps it readable on wide screens */
+  width: 100%; 
+  max-width: 320px; 
   padding: 16px 0;
-  border-bottom: px solid white; /* ✅ Solid continuous line */
+  border-bottom: px solid white; 
   color: white;
   font-size: 18px;
 }
 
-/* Label on the left */
+
 .label {
   text-align: left;
 }
 
-/* Value on the right */
+
 .value {
   font-weight: bold;
   color: #ff4ecd;
@@ -171,7 +171,7 @@ body, html {
   min-width: 60px;
 }
 
-/* Style for 'None' */
+
 .value.none {
   color: gray;
   font-style: italic;
@@ -188,7 +188,7 @@ body, html {
 .library-header {
   display: flex;
   justify-content: center;
-  align-items: center; /* This will center it vertically too, if the header has a defined height */
+  align-items: center; 
 }
 
 
@@ -211,7 +211,7 @@ body, html {
 .Load-header {
   display: flex;
   justify-content: center;
-  align-items: center; /* This will center it vertically too, if the header has a defined height */
+  align-items: center;
 }
 
 
@@ -342,11 +342,6 @@ body {
   padding: 15px;
   width: 220px;
   text-align: center;
-  transition: transform 0.3s;
-}
-
-.clip-card:hover {
-  transform: scale(1.05);
 }
 
 .thumbnail {
@@ -391,18 +386,18 @@ body {
 .views {
   display: flex; 
   justify-content: space-between;
-  font-size: 0.95rem;
+  font-size: 15px;
   color: #ffffff;
   margin-top: 5px;
 }
 
 .see {
-  display: flex; 
-  justify-content:left;
-  font-size: 0.95rem;
-  color: #ffffff;
-  margin-top: 5px;
-  gap: 10px; 
+  display: flex; 
+  justify-content:left;
+  font-size: 0.95rem;
+  color: #ffffff;
+  margin-top: 5px;
+  gap: 10px; 
 color:  #f06292;
 }
 
@@ -414,7 +409,6 @@ color:  #f06292;
   border: none;
   border-radius: 25px;
   font-size: 1rem;
-  cursor: pointer;
   transition: background-color 0.3s;
 }
 
@@ -575,11 +569,11 @@ footer {
   <p><span class="label">Clips</span><span class="value">29</span></p>
 </div>
     <h3 class="clip-title"><span>Your Most Popular</span> Clips</h3>
-    <!-- You can add a grid of clips here -->
+    
 
   <section class="clips-section">
     <div class="clips-container">
-      <!-- Clip Card 1 -->
+      
       <div class="clip-card">
         <div class="thumbnail">
           <img src="clip-01.jpg" alt="First Clip">
@@ -589,7 +583,7 @@ footer {
         <p class="see">&#128065; 250</p>
       </div>
 
-      <!-- Clip Card 2 -->
+      
       <div class="clip-card">
         <div class="thumbnail">
           <img src="clip-02.jpg" alt="Second Clip">
@@ -599,7 +593,7 @@ footer {
         <p class="see">&#128065; 183</p>
       </div>
 
-      <!-- Clip Card 3 -->
+      
       <div class="clip-card">
         <div class="thumbnail">
           <img src="clip-03.jpg" alt="Third Clip">
@@ -609,7 +603,7 @@ footer {
         <p class="see">&#128065; 141</p>
       </div>
 
-      <!-- Clip Card 4 -->
+      
       <div class="clip-card">
         <div class="thumbnail">
           <img src="clip-04.jpg" alt="Fourth Clip">
@@ -640,9 +634,9 @@ footer {
           <p>Sandbox</p>
         </div>
       </div>
-      <div class="game-meta">24/08/2036</div>
+      <div class="game-meta"><h5>Date Added</h5><p>24/08/2036</p></div>
       <div class="game-meta"><h5>Hours Played</h5><p>634 H 22 Mins</p></div>
-      <div class="game-meta">Downloaded</div>
+      <div class="game-meta"><h5>Currently</h5><p>Downloaded</p></div>
       <div><button class="download-btn">Downloaded</button></div>
     </div>
 
@@ -654,9 +648,9 @@ footer {
           <p>Sandbox</p>
         </div>
       </div>
-      <div class="game-meta">22/06/2036</div>
+      <div class="game-meta"><h5>Date Added</h5><p>22/06/2036</p></div>
       <div class="game-meta"><h5>Hours Played</h5><p>745 H 22 Mins</p></div>
-      <div class="game-meta">Downloaded</div>
+      <div class="game-meta"><h5>Currently</h5><p>Downloaded</p></div>
       <div><button class="download-btn">Downloaded</button></div>
     </div>
 
@@ -668,9 +662,9 @@ footer {
           <p>Sandbox</p>
         </div>
       </div>
-      <div class="game-meta">21/04/2022</div>
+      <div class="game-meta"><h5>Date Added</h5><p>21/04/2022</p></div>
       <div class="game-meta"><h5>Hours Played</h5><p>632 H 46 Mins</p></div>
-      <div class="game-meta">Downloaded</div>
+      <div class="game-meta"><h5>Currently</h5><p>Downloaded</p></div>
       <div><button class="download-btn">Downloaded</button></div>
     </div>
   </div>
