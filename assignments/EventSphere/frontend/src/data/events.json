@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Tech Expo 2025",
+    "description": "Showcasing new tech.",
+    "date": "2025-09-15T10:00:00Z"
+  },
+  {
+    "title": "AI Workshop",
+    "description": "Learn AI basics.",
+    "date": "2025-10-01T11:00:00Z"
+  },
+  {
+    "title": "Hackathon Sprint",
+    "description": "24-hour coding challenge.",
+    "date": "2025-10-10T09:00:00Z"
+  },
+  {
+    "title": "Web Dev Bootcamp",
+    "description": "Master frontend and backend.",
+    "date": "2025-10-20T14:00:00Z"
+  },
+  {
+    "title": "Cloud Computing Seminar",
+    "description": "Explore AWS and Azure.",
+    "date": "2025-11-05T13:00:00Z"
+  },
+  {
+    "title": "Cybersecurity Conference",
+    "description": "Protect digital assets.",
+    "date": "2025-11-15T10:30:00Z"
+  },
+  {
+    "title": "Startup Pitch Fest",
+    "description": "Pitch your startup idea.",
+    "date": "2025-12-01T12:00:00Z"
+  },
+  {
+    "title": "Blockchain Meetup",
+    "description": "Dive into decentralized tech.",
+    "date": "2025-12-10T15:00:00Z"
+  },
+  {
+    "title": "Design Thinking Workshop",
+    "description": "Innovate with creative solutions.",
+    "date": "2025-12-20T10:00:00Z"
+  }
+]
