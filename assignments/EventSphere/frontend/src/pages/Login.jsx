@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './AuthPage.css';
 
 const AuthPage = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -19,38 +20,38 @@ const AuthPage = () => {
   };
 
   return (
-    <div className="container">
-      <h2>{isLogin ? 'Login' : 'Create Account'}</h2>
-      <form onSubmit={handleSubmit} className="form">
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={form.email}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={form.password}
-          onChange={handleChange}
-          required
-        />
-        <button type="submit">{isLogin ? 'Login' : 'Register'}</button>
-      </form>
+    <div className="auth-container">
+      <div className="auth-card">
+        <h2>{isLogin ? 'Welcome Back 👋' : 'Join EventSphere 🚀'}</h2>
+        <form onSubmit={handleSubmit} className="auth-form">
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            value={form.email}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Enter your password"
+            value={form.password}
+            onChange={handleChange}
+            required
+          />
+          <button type="submit" className="auth-button">
+            {isLogin ? 'Login' : 'Register'}
+          </button>
+        </form>
 
-      <p>
-        {isLogin ? "Don't have an account?" : "Already have an account?"}
-        <button
-          type="button"
-          onClick={() => setIsLogin(!isLogin)}
-          style={{ marginLeft: "10px" }}
-        >
-          {isLogin ? 'Create Account' : 'Login'}
-        </button>
-      </p>
+        <p className="auth-toggle">
+          {isLogin ? "Don't have an account?" : "Already have an account?"}
+          <button type="button" className="toggle-button" onClick={() => setIsLogin(!isLogin)}>
+            {isLogin ? 'Create Account' : 'Login'}
+          </button>
+        </p>
+      </div>
     </div>
   );
 };

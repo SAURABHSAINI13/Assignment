@@ -1,27 +1,47 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { fetchEvents } from '../api/eventApi';
+import EventCard from '../components/EventCard';
+import './Events.css'; // Optional: custom styles
 
 const Events = () => {
   const [events, setEvents] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const sampleEvents = [
-      { id: 1, title: 'Tech Talk', date: '2025-08-12' },
-      { id: 2, title: 'Hackathon', date: '2025-08-14' },
-    ];
-    setEvents(sampleEvents);
+    const loadEvents = async () => {
+      try {
+        const data = await fetchEvents();
+        setEvents(data);
+      } catch (error) {
+        console.error('Failed to load events:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadEvents();
   }, []);
 
   return (
-    <div className="container">
-      <h2>Upcoming Events</h2>
-      <ul className="event-list">
-        {events.map((event) => (
-          <li key={event.id} className="event-item">
-            <h3>{event.title}</h3>
-            <p>Date: {event.date}</p>
-          </li>
-        ))}
-      </ul>
+    <div className="events-page">
+      <header className="events-header">
+        <h2>🎉 Discover Upcoming Events</h2>
+        <p>From tech talks to talent shows — there’s something for everyone!</p>
+      </header>
+
+      {loading ? (
+        <p className="loading">Loading events...</p>
+      ) : events.length === 0 ? (
+        <div className="no-events">
+          <p>No events available right now. Stay tuned for updates! 🚧</p>
+        </div>
+      ) : (
+        <div className="events-grid">
+          {events.map((event, index) => (
+            <EventCard key={index} event={event} registered={false} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

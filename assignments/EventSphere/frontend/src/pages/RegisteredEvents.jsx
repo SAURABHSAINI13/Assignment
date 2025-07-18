@@ -1,16 +1,59 @@
-import React from 'react';
+import React, { useState } from 'react';
+import './RegistrationForm.css';
 
-const RegisteredEvents = ({ events }) => (
-  <div className="registered-events">
-    <h2>Your Registered Events</h2>
-    <ul>
-      {events.map(event => (
-        <li key={event.id}>
-          {event.title} - {event.date} ({event.location})
-        </li>
-      ))}
-    </ul>
-  </div>
-);
+const RegistrationForm = ({ onSubmit }) => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    event: '',
+  });
 
-export default RegisteredEvents;
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (onSubmit) {
+      onSubmit(formData); // Trigger external handler if provided
+    } else {
+      console.log('Form Submitted:', formData); // Default behavior
+    }
+
+    setFormData({ name: '', email: '', event: '' });
+  };
+
+  return (
+    <form className="register-form" onSubmit={handleSubmit}>
+      <input
+        type="text"
+        name="name"
+        value={formData.name}
+        placeholder="Your Name"
+        onChange={handleChange}
+        required
+      />
+      <input
+        type="email"
+        name="email"
+        value={formData.email}
+        placeholder="Email"
+        onChange={handleChange}
+        required
+      />
+      <input
+        type="text"
+        name="event"
+        value={formData.event}
+        placeholder="Event Name"
+        onChange={handleChange}
+        required
+      />
+      <button type="submit">Register</button>
+    </form>
+  );
+};
+
+export default RegistrationForm;

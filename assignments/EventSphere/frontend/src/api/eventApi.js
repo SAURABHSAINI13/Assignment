@@ -1,8 +1,10 @@
+// src/api/eventApi.js
 import API from './axiosInstance';
+
 export const fetchEvents = async () => {
   try {
     const res = await API.get('/events');
-    return res.data;
+    return res.data; // This should be an array
   } catch (err) {
     console.error('Error fetching events:', err);
     return [];
@@ -18,6 +20,7 @@ export const fetchEventById = async (id) => {
     throw err;
   }
 };
+
 export const createEvent = async (data, token) => {
   try {
     const res = await API.post('/events', data, {

@@ -1,6 +1,6 @@
 // src/components/EventCard.jsx
 import React from 'react';
-import './EventCard.css';
+import './EventCard.css'; // Optional, if you have custom styles
 
 const EventCard = ({ event, registered = false, onRegister }) => {
   if (!event) return null;
@@ -11,7 +11,7 @@ const EventCard = ({ event, registered = false, onRegister }) => {
       <p><strong>Date:</strong> {event.date}</p>
       <p><strong>Location:</strong> {event.location}</p>
       {event.description && <p>{event.description}</p>}
-      
+
       <button
         onClick={() => !registered && onRegister?.(event._id)}
         disabled={registered}

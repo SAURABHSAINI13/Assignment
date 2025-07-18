@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Contact.css';
 
 const Contact = () => {
   const [form, setForm] = useState({ name: '', message: '' });
@@ -10,17 +11,36 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(form);
+    console.log('Form submitted:', form);
+    alert('Thanks for reaching out!');
+    setForm({ name: '', message: '' });
   };
 
   return (
-    <div className="container">
-      <h2>Contact Us</h2>
-      <form onSubmit={handleSubmit} className="form">
-        <input type="text" name="name" placeholder="Your Name" onChange={handleChange} required />
-        <textarea name="message" placeholder="Your Message" onChange={handleChange} required />
-        <button type="submit">Send</button>
-      </form>
+    <div className="contact-section">
+      <div className="contact-card">
+        <h2 className="contact-title">Get in Touch ✉️</h2>
+        <p className="contact-subtitle">We'd love to hear from you!</p>
+        <form onSubmit={handleSubmit} className="contact-form">
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            value={form.name}
+            onChange={handleChange}
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            value={form.message}
+            onChange={handleChange}
+            rows="5"
+            required
+          ></textarea>
+          <button type="submit" className="contact-btn">Send Message</button>
+        </form>
+      </div>
     </div>
   );
 };
