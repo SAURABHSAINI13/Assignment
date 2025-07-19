@@ -4,13 +4,17 @@ import { Link } from 'react-router-dom';
 
 function TaskList() {
   const [tasks, setTasks] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const loadTasks = async () => {
     const res = await getTasks();
     setTasks(res.data);
+    setLoading(false);
   };
 
   const handleDelete = async (id) => {
+    const confirmDelete = window.confirm('Are you sure you want to delete this task?');
+    if (!confirmDelete) return;
     await deleteTask(id);
     loadTasks();
   };
@@ -23,17 +27,24 @@ function TaskList() {
     <div>
       <h2>Task List</h2>
       <Link to="/add">Add Task</Link>
-      <ul>
-        {tasks.map((task) => (
-          <li key={task.id}>
-            {task.title}
-            <Link to={`/edit/${task.id}`}>Edit</Link>
-            <button onClick={() => handleDelete(task.id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
+
+      {loading ? (
+        <p>Loading tasks...</p>
+      ) : (
+        <ul>
+          {tasks.map((task) => (
+            <li key={task.id}>
+              {task.title}
+              {' '}
+              <Link to={`/edit/${task.id}`}>Edit</Link>
+              {' '}
+              <button onClick={() => handleDelete(task.id)}>Delete</button>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
-  )
+  );
 }
 
-export default TaskList
+export default TaskList;

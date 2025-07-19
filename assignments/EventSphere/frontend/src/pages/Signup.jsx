@@ -14,7 +14,7 @@ const Signup = () => {
     try {
       const res = await signup(form);
       alert(res.data.msg || "Signup successful");
-      setForm({ name: '', email: '', password: '' }); // Clear form
+      setForm({ name: '', email: '', password: '' });
     } catch (err) {
       console.error(err.response?.data?.msg || 'Signup failed');
       alert(err.response?.data?.msg || 'Signup failed');

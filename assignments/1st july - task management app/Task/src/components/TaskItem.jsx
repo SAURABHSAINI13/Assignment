@@ -1,15 +1,24 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 function TaskItem({ task, onDelete, onUpdate }) {
-  const [isEditing, setIsEditing] = useState(false)
-  const [newTitle, setNewTitle] = useState(task.title)
+  const [isEditing, setIsEditing] = useState(false);
+  const [newTitle, setNewTitle] = useState(task.title);
 
-  const handleEdit = () => setIsEditing(true)
+  const handleEdit = () => setIsEditing(true);
+
+  const handleCancel = () => {
+    setNewTitle(task.title); // reset changes
+    setIsEditing(false);
+  };
 
   const handleSave = () => {
-    onUpdate(task.id, { ...task, title: newTitle })
-    setIsEditing(false)
-  }
+    if (newTitle.trim() === '') {
+      alert('Task title cannot be empty');
+      return;
+    }
+    onUpdate(task.id, { ...task, title: newTitle });
+    setIsEditing(false);
+  };
 
   return (
     <li>
@@ -19,7 +28,8 @@ function TaskItem({ task, onDelete, onUpdate }) {
             value={newTitle}
             onChange={(e) => setNewTitle(e.target.value)}
           />
-          <button onClick={handleSave}>Update</button>
+          <button onClick={handleSave}>Save</button>
+          <button onClick={handleCancel}>Cancel</button>
         </>
       ) : (
         <>
@@ -29,7 +39,7 @@ function TaskItem({ task, onDelete, onUpdate }) {
       )}
       <button onClick={() => onDelete(task.id)}>Delete</button>
     </li>
-  )
+  );
 }
 
-export default TaskItem
+export default TaskItem;

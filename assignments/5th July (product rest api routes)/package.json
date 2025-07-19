@@ -1,15 +1,18 @@
 {
-  "name": "5th-july-(product-rest-api-routes)",
+  "name": "5th-july-product-rest-api-routes",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "REST API for product management using Express.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Saurabh Saini",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
   }
 }
