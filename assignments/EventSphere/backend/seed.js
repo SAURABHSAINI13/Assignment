@@ -4,11 +4,24 @@ import fs from 'fs';
 import Event from './models/Event.js';
 
 dotenv.config();
-await mongoose.connect(process.env.MONGO_URI);
 
+const seedData = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
 
-const data = JSON.parse(fs.readFileSync('./data/events.json', 'utf-8'));
+    await Event.deleteMany();
+    const data = JSON.parse(fs.readFileSync('./data/events.json', 'utf-8'));
+    await Event.insertMany(data);
 
-await Event.insertMany(data);
-console.log('Events inserted!');
-mongoose.disconnect();
+    console.log('✅ Events seeded successfully!');
+    process.exit();
+  } catch (err) {
+    console.error('❌ Seeding error:', err);
+    process.exit(1);
+  }
+};
+
+seedData();

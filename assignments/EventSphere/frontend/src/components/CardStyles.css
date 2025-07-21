@@ -22,7 +22,6 @@
   color: #374151;
 }
 
-/* Event List Styling */
 .event-list {
   list-style: none;
   padding: 0;
@@ -46,7 +45,6 @@
   color: #6b7280;
 }
 
-/* Status Colors */
 .status {
   font-size: 14px;
   padding: 4px 8px;

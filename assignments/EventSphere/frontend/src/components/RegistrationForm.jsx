@@ -17,9 +17,9 @@ const RegistrationForm = ({ onSubmit }) => {
     e.preventDefault();
 
     if (onSubmit) {
-      onSubmit(formData); // Trigger external handler if provided
+      onSubmit(formData);
     } else {
-      console.log('Form Submitted:', formData); // Default behavior
+      console.log('Form Submitted:', formData);
     }
 
     setFormData({ name: '', email: '', event: '' });

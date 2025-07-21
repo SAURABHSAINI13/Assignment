@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './AuthPage.css';
 
 const AuthPage = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [form, setForm] = useState({ email: '', password: '' });
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -14,6 +16,7 @@ const AuthPage = () => {
     e.preventDefault();
     if (isLogin) {
       alert("Logging in: " + form.email);
+      navigate('/');
     } else {
       alert("Registering: " + form.email);
     }
