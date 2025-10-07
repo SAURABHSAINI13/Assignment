@@ -23,23 +23,40 @@
   margin: 0.25rem 0;
 }
 
+.event-card-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
 .event-card button {
-  margin-top: 1rem;
-  padding: 0.6rem 1.2rem;
-  font-size: 1rem;
-  background-color: #3498db;
-  color: white;
   border: none;
-  border-radius: 8px;
+  padding: 8px 16px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.3s;
+  flex: 1;
 }
 
-.event-card button:disabled {
-  background-color: #aaa;
+.event-card .register-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.event-card .register-btn:hover {
+  background-color: #45a049;
+}
+
+.event-card .ticket-btn {
+  background-color: #2196f3;
+  color: white;
+}
+
+.event-card .ticket-btn:hover {
+  background-color: #0b7dda;
+}
+
+.event-card .registered-btn {
+  background-color: #cccccc;
   cursor: not-allowed;
-}
-
-.event-card button:hover:enabled {
-  background-color: #2980b9;
 }

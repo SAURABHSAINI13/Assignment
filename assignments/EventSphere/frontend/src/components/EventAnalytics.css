@@ -1,0 +1,149 @@
+.analytics-container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.analytics-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.analytics-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.analytics-controls {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.chart-type-selector,
+.time-range-selector {
+  display: flex;
+  background-color: #f5f7fa;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.chart-type-selector button,
+.time-range-selector button {
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+}
+
+.chart-type-selector button.active,
+.time-range-selector button.active {
+  background-color: #4caf50;
+  color: white;
+}
+
+.chart-type-selector button:hover,
+.time-range-selector button:hover {
+  background-color: rgba(76, 175, 80, 0.1);
+}
+
+.analytics-chart {
+  height: 350px;
+  margin-bottom: 1.5rem;
+}
+
+.analytics-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.summary-card {
+  background-color: #f5f7fa;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.summary-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.summary-value {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.summary-change {
+  font-size: 0.8rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.summary-change.positive {
+  color: #4caf50;
+}
+
+.summary-change.negative {
+  color: #f44336;
+}
+
+@media (max-width: 768px) {
+  .analytics-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .analytics-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .analytics-chart {
+    height: 300px;
+  }
+  
+  .analytics-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .analytics-summary {
+    grid-template-columns: 1fr;
+  }
+  
+  .chart-type-selector,
+  .time-range-selector {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  .chart-type-selector button,
+  .time-range-selector button {
+    flex: 1;
+  }
+}
