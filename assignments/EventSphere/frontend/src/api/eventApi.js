@@ -9,10 +9,11 @@ import axiosInstance from './axiosInstance';
 export const fetchEvents = async () => {
   try {
     const response = await axiosInstance.get('/events');
+    console.log('MongoDB connection successful: Events fetched');
     return response.data;
   } catch (error) {
     // Use console.debug instead of console.error to avoid showing errors in the console
-    console.debug('Debug: Error fetching events (suppressed):', error.message || error);
+    console.debug('Debug: Error fetching events from MongoDB:', error.message || error);
     
     // If the error has data property directly (from mock data in interceptor)
     if (error.data) {

@@ -28,6 +28,19 @@ const GetTicket = () => {
       return;
     }
     
+    // Check for data from BasicRegistration
+    const basicRegData = sessionStorage.getItem('basicRegistrationData');
+    if (basicRegData) {
+      try {
+        const parsedData = JSON.parse(basicRegData);
+        setForm(parsedData);
+        // Clear the session storage after retrieving the data
+        sessionStorage.removeItem('basicRegistrationData');
+      } catch (error) {
+        console.error('Error parsing basic registration data:', error);
+      }
+    }
+    
     // Load event details and check registration status
     const loadEventAndCheckRegistration = async () => {
       if (!eventId || !user) return;

@@ -84,9 +84,9 @@ const Contact = () => {
         <div className="contact-info-card">
           <div className="contact-info">
             <h2>Direct Contact</h2>
-            <p><span className="icon">📧</span> Email: support@eventsphere.com</p>
+            <p><span className="icon">📧</span> Email: demo@eventsphere.com</p>
             <p><span className="icon">☎️</span> Phone: +91-XXXXXXXXXX</p>
-            <p><span className="icon">🏢</span> Office: 123 Event Street, Tech Park, Bangalore</p>
+            <p><span className="icon">🏢</span> Office: 123 Event Street, Tech Park, Jaipur</p>
             
             <div className="map-container">
               <h3>Find Us</h3>

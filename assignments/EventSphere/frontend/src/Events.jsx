@@ -28,14 +28,8 @@ const Events = () => {
   }, []);
 
   const handleRegister = (eventId) => {
-    // First check if user is authenticated, if not redirect to login
-    const token = localStorage.getItem('token');
-    if (!token) {
-      navigate(`/login?redirect=${encodeURIComponent(`/ticket-registration?event=${eventId}`)}`);
-      return;
-    }
-    // If authenticated, navigate to ticket registration
-    navigate(`/ticket-registration?event=${eventId}`);
+    // Navigate to basic registration page first
+    navigate(`/basic-registration?event=${eventId}`);
   };
 
   return (

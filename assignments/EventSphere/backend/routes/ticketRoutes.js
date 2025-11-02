@@ -4,15 +4,15 @@ import {
   getUserTickets, 
   getTicketByBookingId,
   createQRCode,
-  readQRCode,
-  createTicket
+  readQRCode
+  // createTicket  // <-- Comment this out until fixed
 } from '../controllers/ticketController.js';
 import { authenticate } from '../middleware/authMiddleware.js';
 
 const router = express.Router();
 
 // Create a new ticket (admin/dashboard)
-router.post('/create', authenticate, createTicket);
+// router.post('/create', authenticate, createTicket);  // <-- Comment this out until fixed
 
 // Register for an event
 router.post('/:eventId/register', registerTicket);

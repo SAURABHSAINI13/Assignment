@@ -7,15 +7,13 @@ const EventCard = ({ event, registered = false, onRegister }) => {
   const navigate = useNavigate();
 
   const handleGetTicket = () => {
-    // Navigate directly to ticket registration page instead of get-ticket
+    // Navigate directly to ticket registration page instead of get-ticket+
     navigate(`/ticket-registration?event=${event._id}`);
   };
   
   const handleRegisterClick = () => {
-    // Always navigate to registration page first, regardless of onRegister
+    // Navigate to get-ticket page which is not protected
     navigate(`/get-ticket?event=${event._id}`);
-    // Don't call onRegister as it's causing the issue by redirecting to ticket-registration
-    }
   };
 
   return (

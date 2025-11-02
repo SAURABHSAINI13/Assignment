@@ -4,6 +4,7 @@ import Home from '../pages/Home';
 import Events from '../pages/Events';
 import EventDetails from '../pages/EventDetails';
 import GetTicket from '../pages/GetTicket';
+import BasicRegistration from '../pages/BasicRegistration';
 import TicketRegistration from '../pages/TicketRegistration';
 import TicketConfirmation from '../pages/TicketConfirmation';
 import AuthPage from '../pages/AuthPage';
@@ -14,9 +15,10 @@ import AdminDashboard from '../pages/AdminDashboard';
 import EditEvent from '../pages/EditEvent';
 import NotFound from '../pages/NotFound';
 import MakeAdmin from '../pages/MakeAdmin';
-import UserManagement from '../pages/UserManagement';
+import ManageUsers from '../pages/ManageUsers';
 import ProtectedRoute from '../components/ProtectedRoute';
 import AdminRoute from '../components/AdminRoute';
+
 
 const AppRoutes = () => {
   return (
@@ -24,6 +26,7 @@ const AppRoutes = () => {
       <Route path="/" element={<Home />} />
       <Route path="/events" element={<Events />} />
       <Route path="/events/:id" element={<EventDetails />} />
+      <Route path="/basic-registration" element={<BasicRegistration />} />
       <Route path="/get-ticket" element={<GetTicket />} />
       <Route path="/ticket-registration" element={
         <ProtectedRoute>
@@ -66,7 +69,13 @@ const AppRoutes = () => {
       
       <Route path="/user-management" element={
         <AdminRoute>
-          <UserManagement />
+          <ManageUsers />
+        </AdminRoute>
+      } />
+      
+      <Route path="/manage-users" element={
+        <AdminRoute>
+          <ManageUsers />
         </AdminRoute>
       } />
       

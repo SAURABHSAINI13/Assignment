@@ -20,6 +20,7 @@ import TicketRegistration from './pages/TicketRegistration';
 import TicketConfirmation from './pages/TicketConfirmation';
 import CreateEvent from './pages/CreateEvent';
 import MakeAdmin from './pages/MakeAdmin';
+import EventRegistration from './pages/EventRegistration'; // ✅ FIXED import
 import { AuthProvider } from './context/AuthContext';
 
 const App = () => {
@@ -32,64 +33,63 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Navigate to="/home" replace />} />
               <Route path="/home" element={<Home />} />
-              <Route path="/events" element={
-                <ErrorBoundary>
-                  <Events />
-                </ErrorBoundary>
-              } />
-              <Route path="/events/:eventId" element={
-                <ErrorBoundary>
-                  <EventDetails />
-                </ErrorBoundary>
-              } />
+              <Route path="/register-event" element={<EventRegistration />} /> {/* ✅ FIXED */}
+              <Route path="/events" element={<Events />} />
+              <Route path="/events/:eventId" element={<EventDetails />} />
               <Route path="/get-ticket" element={<GetTicket />} />
-              <Route path="/ticket-details/:bookingId" element={
-                <ProtectedRoute>
-                  <ErrorBoundary>
+              <Route
+                path="/ticket-details/:bookingId"
+                element={
+                  <ProtectedRoute>
                     <TicketDetails />
-                  </ErrorBoundary>
-                </ProtectedRoute>
-              } />
+                  </ProtectedRoute>
+                }
+              />
               <Route path="/login" element={<AuthPage />} />
               <Route path="/signup" element={<AuthPage />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/about" element={<AboutUs />} />
-              <Route path="/dashboard" element={
-                <ProtectedRoute>
-                  <ErrorBoundary>
+              <Route
+                path="/dashboard"
+                element={
+                  <ProtectedRoute>
                     <Dashboard />
-                  </ErrorBoundary>
-                </ProtectedRoute>
-              } />
-              <Route path="/ticket-registration" element={
-                <ProtectedRoute>
-                  <ErrorBoundary>
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/ticket-registration"
+                element={
+                  <ProtectedRoute>
                     <TicketRegistration />
-                  </ErrorBoundary>
-                </ProtectedRoute>
-              } />
-              <Route path="/ticket-confirmation/:bookingId" element={
-                <ProtectedRoute>
-                  <ErrorBoundary>
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/ticket-confirmation/:bookingId"
+                element={
+                  <ProtectedRoute>
                     <TicketConfirmation />
-                  </ErrorBoundary>
-                </ProtectedRoute>
-              } />
-              <Route path="/create-event" element={
-                <ProtectedRoute>
-                  <ErrorBoundary>
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/create-event"
+                element={
+                  <ProtectedRoute>
                     <CreateEvent />
-                  </ErrorBoundary>
-                </ProtectedRoute>
-              } />
-              <Route path="/make-admin" element={
-                <ProtectedRoute>
-                  <ErrorBoundary>
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/make-admin"
+                element={
+                  <ProtectedRoute>
                     <MakeAdmin />
-                  </ErrorBoundary>
-                </ProtectedRoute>
-              } />
+                  </ProtectedRoute>
+                }
+              />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>

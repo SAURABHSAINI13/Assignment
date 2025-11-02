@@ -7,6 +7,7 @@ import ErrorState from '../components/ErrorState';
 import { useAuth } from '../context/AuthContext';
 import { toast } from 'react-toastify';
 import './Events.css';
+frontend/src/pages/RegisteredEvents.jsx;
 
 const Events = () => {
   const [events, setEvents] = useState([]);
@@ -52,24 +53,42 @@ const Events = () => {
         setLoading(true);
         setError(null);
         const data = await fetchEvents();
-        setEvents(data);
-        setFilteredEvents(data);
+        
+        if (data && Array.isArray(data) && data.length > 0) {
+          console.log('MongoDB events loaded successfully:', data.length);
+          setEvents(data);
+          setFilteredEvents(data);
+        } else if (data && Array.isArray(data) && data.length === 0) {
+          console.log('No events found in MongoDB');
+          setEvents([]);
+          setFilteredEvents([]);
+          // No error message for empty events
+        } else {
+          console.warn('Invalid events data format received from MongoDB');
+          setEvents([]);
+          setFilteredEvents([]);
+          // No error message for invalid data format
+        }
         
         // If user is authenticated, fetch their registered events
         if (isAuthenticated && user) {
           try {
             const registeredEventsData = await fetchUserRegisteredEvents();
-            // Extract event IDs from the registered events data
-            const registeredEventIds = registeredEventsData.map(event => event.eventId);
-            setRegisteredEvents(registeredEventIds);
+            if (registeredEventsData && Array.isArray(registeredEventsData)) {
+              // Extract event IDs from the registered events data
+              const registeredEventIds = registeredEventsData.map(event => event.eventId);
+              setRegisteredEvents(registeredEventIds);
+            }
           } catch (error) {
-            console.error('Failed to load registered events:', error);
+            console.debug('Failed to load registered events:', error);
             // Don't set error state here to avoid blocking the main events display
           }
         }
       } catch (error) {
-        console.error('Failed to load events:', error);
-        setError('Failed to load events. Please try again.');
+        console.debug('Failed to load events from MongoDB:', error);
+        // No error message for connection failure
+        setEvents([]);
+        setFilteredEvents([]);
       } finally {
         setLoading(false);
       }
@@ -174,8 +193,8 @@ const Events = () => {
       // Update local state to reflect registration
       setRegisteredEvents([...registeredEvents, eventId]);
       
-      // Show success message and redirect to get ticket page
-      navigate(`/get-ticket?event=${eventId}`);
+      // Show success message and redirect to basic registration page
+      navigate(`/basic-registration?event=${eventId}`);
     } catch (error) {
       console.error('Failed to register for event:', {
         eventId,

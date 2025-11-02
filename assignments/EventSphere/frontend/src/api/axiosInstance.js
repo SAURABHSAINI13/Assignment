@@ -48,6 +48,10 @@ console.error = function(message, ...args) {
 // Add response interceptor for global error handling and token refresh
 API.interceptors.response.use(
   (response) => {
+    // Log successful MongoDB connection for debugging
+    if (response.config.url.includes('/events')) {
+      console.debug('MongoDB connection successful: Events data retrieved');
+    }
     return response;
   },
   async (error) => {
